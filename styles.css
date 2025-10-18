@@ -134,7 +134,7 @@ body {
 }
 
 .logo-img {
-    height: 48px;
+    height: 96px;
     width: auto;
     display: block;
     transition: opacity var(--transition-fast);
@@ -142,7 +142,7 @@ body {
 
 @media (max-width: 768px) {
     .logo-img {
-        height: 40px;
+        height: 72px;
     }
 }
 
