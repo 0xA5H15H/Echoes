@@ -1,0 +1,680 @@
+/* ==================== Fonts ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
+
+/* ==================== CSS Variables ==================== */
+:root {
+    /* Colors */
+    --bg: #000000;
+    --fg: #F6F7F8;
+    --muted: #C7CBD1;
+    --dim: #8B90A0;
+    --accent: #A78BFA;
+    --accent-hover: #8B5CF6;
+    --accent-ghost: rgba(167, 139, 250, 0.08);
+    --accent-glow: rgba(167, 139, 250, 0.15);
+    --error: #FF4C6A;
+    --success: #A78BFA;
+
+    /* Spacing */
+    --space-xxl: clamp(72px, 10vw, 160px);
+    --space-xl: clamp(48px, 6vw, 120px);
+    --space-lg: clamp(28px, 4vw, 64px);
+    --space-md: 24px;
+    --space-sm: 14px;
+
+    /* Typography */
+    --h1: clamp(40px, 7vw, 72px);
+    --h2: clamp(28px, 5vw, 48px);
+    --h3: clamp(20px, 3.5vw, 28px);
+    --body: clamp(16px, 1.6vw, 20px);
+    --small: clamp(13px, 1.4vw, 15px);
+
+    /* Layout */
+    --max-width: 1200px;
+    --container-padding: 24px;
+    --radius: 12px;
+    --radius-lg: 16px;
+
+    /* Effects */
+    --shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 20px 50px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 30px 70px rgba(0, 0, 0, 0.7);
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== Reset & Base ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+body {
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    background: radial-gradient(1400px 1400px at 50% -10%, var(--accent-ghost), transparent 65%), var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* ==================== Skip Link ==================== */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    padding: 12px 20px;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+    border-radius: var(--radius);
+    z-index: 9999;
+}
+
+/* ==================== Header ==================== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px var(--container-padding);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+    transition: opacity var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 40px;
+    }
+}
+
+.logo-img:hover {
+    opacity: 0.85;
+}
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    color: var(--fg);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.02);
+    text-decoration: none;
+    font-size: var(--small);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.nav-cta:hover {
+    border-color: var(--accent);
+    background: rgba(167, 139, 250, 0.05);
+    transform: translateY(-1px);
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+    position: relative;
+    padding: calc(var(--space-xxl) + 40px) 0 var(--space-xxl);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    min-height: 85vh;
+}
+
+.hero-pulse {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-pulse::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    width: 120vmax;
+    height: 120vmax;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(167, 139, 250, 0.08), transparent 70%);
+    border-radius: 50%;
+    animation: echo 8s ease-in-out infinite;
+    opacity: 0.5;
+}
+
+@keyframes echo {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(0.92);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 0.6;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Sora', sans-serif;
+    font-size: var(--h1);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-family: 'Sora', sans-serif;
+    font-size: var(--h3);
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+}
+
+.hero-description {
+    max-width: 800px;
+    margin: 0 auto var(--space-xl);
+    color: var(--muted);
+    font-size: var(--body);
+    line-height: 1.8;
+}
+
+/* ==================== CTA Button ==================== */
+.cta-button {
+    font-family: 'Sora', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--body);
+    text-decoration: none;
+    transition: all var(--transition);
+    box-shadow: 0 0 0 0 var(--accent-glow);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px var(--accent-glow);
+    background: var(--accent-hover);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+.cta-button:disabled {
+    background: var(--dim);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ==================== Sections ==================== */
+section {
+    padding: var(--space-xxl) 0;
+}
+
+.section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: var(--h2);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+/* ==================== Philosophy Section ==================== */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.philosophy-card {
+    padding: var(--space-lg);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+    text-align: center;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(167, 139, 250, 0.3);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-md);
+    filter: grayscale(0.2);
+}
+
+.philosophy-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: var(--h3);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.philosophy-card p {
+    color: var(--dim);
+    font-size: var(--body);
+    line-height: 1.7;
+}
+
+/* ==================== Difference Section ==================== */
+.difference {
+    background: linear-gradient(180deg, transparent, rgba(167, 139, 250, 0.02), transparent);
+}
+
+.difference-content {
+    max-width: 800px;
+    margin: var(--space-xl) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.difference-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+}
+
+.difference-marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.difference-item h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: var(--h3);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.muted {
+    color: var(--dim);
+    line-height: 1.7;
+}
+
+/* ==================== Safety Section ==================== */
+.safety-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-lg) auto 0;
+    max-width: 700px;
+    display: grid;
+    gap: 16px;
+}
+
+.safety-list li {
+    color: var(--muted);
+    font-size: var(--body);
+    padding-left: 28px;
+    position: relative;
+}
+
+.safety-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 24px;
+    line-height: 1;
+}
+
+/* ==================== Signup Section ==================== */
+.signup {
+    padding: var(--space-xxl) 0;
+}
+
+.signup-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.signup-subtitle {
+    color: var(--muted);
+    font-size: var(--body);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    font-size: var(--small);
+    color: var(--dim);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: var(--body);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--fg);
+    outline: none;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+
+.form-input::placeholder {
+    color: var(--dim);
+    opacity: 0.6;
+}
+
+.form-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.form-note {
+    font-size: 12px;
+    color: var(--dim);
+    margin-top: 8px;
+    line-height: 1.6;
+}
+
+/* ==================== Message ==================== */
+.message {
+    margin-top: var(--space-md);
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: 500;
+    font-size: var(--small);
+}
+
+.message.success {
+    background: rgba(167, 139, 250, 0.1);
+    color: var(--success);
+    border: 1px solid var(--accent);
+}
+
+.message.error {
+    background: rgba(255, 76, 106, 0.1);
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+/* ==================== Final CTA / Callout ==================== */
+.final-cta {
+    padding: var(--space-xl) 0;
+}
+
+.callout {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.callout-text {
+    color: var(--muted);
+    font-size: var(--body);
+    line-height: 1.8;
+}
+
+/* ==================== Footer ==================== */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.footer-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.footer-brand strong {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.footer-tagline {
+    color: var(--dim);
+    font-size: var(--small);
+    margin-top: 6px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--dim);
+    text-decoration: none;
+    font-size: var(--small);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--fg);
+}
+
+.footer-bottom {
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-bottom small {
+    color: var(--dim);
+    font-size: 13px;
+}
+
+/* ==================== Animations ==================== */
+/* Fade in animation for hero */
+.fade-in {
+    animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Only hide if JS is loaded and animations are supported */
+@media (prefers-reduced-motion: no-preference) {
+    .js-loaded .animate-on-scroll:not(.animated) {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 20px;
+    }
+
+    .nav {
+        padding: 16px var(--container-padding);
+    }
+
+    .nav-brand {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding: calc(var(--space-xl) + 20px) 0 var(--space-xl);
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --container-padding: 16px;
+    }
+
+    .hero-description br {
+        display: none;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 14px 24px;
+    }
+
+    .philosophy-card {
+        padding: var(--space-md);
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* ==================== Dark Mode Preference ==================== */
+@media (prefers-color-scheme: light) {
+    /* Keep dark theme regardless - this is intentional */
+}

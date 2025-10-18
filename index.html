@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Echoes - Social media that echoes what matters. Your life, not a scoreboard. Join our beta and be part of something meaningful.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Echoes - Social Reimagined">
+    <meta property="og:description" content="The platform for genuine connection. No likes, no followers, no vanity. Just real moments that matter.">
+    <meta property="og:type" content="website">
+
+    <title>Echoes - Social Reimagined</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#signup" class="skip-link">Skip to signup</a>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="nav-brand">
+                <img src="ECHOES-BG.png" alt="Echoes" class="logo-img">
+            </a>
+            <a href="#signup" class="nav-cta">Join Beta</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-pulse" aria-hidden="true"></div>
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1 class="hero-title">The First Social App That Ends Social Media.</h1>
+                    <p class="hero-subtitle">Your life, not a scoreboard.</p>
+                    <p class="hero-description">
+                        We kept what matters — your voice, your choices, your moments.<br/>
+                        We removed what doesn't — likes, followers, vanity.<br/>
+                        You see people, not points.<br/>
+                        <strong>Welcome to Echoes: social, reimagined.</strong>
+                    </p>
+                    <a href="#signup" class="cta-button">Become a Founding Member</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Echoes Works -->
+        <section class="how-it-works animate-on-scroll" id="how">
+            <div class="container">
+                <h2 class="section-title">How Echoes Works</h2>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <h3>Discover</h3>
+                        <p class="muted">See what's happening around you — genuine activities and events nearby. A feed that favors presence, not performance.</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h3>Join or Create</h3>
+                        <p class="muted">Jump into Echoes forming near you or start your own. Mini Echoes for quick moments; larger meetups when you want more.</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h3>Meet &amp; Remember</h3>
+                        <p class="muted">Show up, connect, and let your Echo Memory grow — a reflection of moments, not metrics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mini Echoes -->
+        <section class="mini-echoes animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Small Moments. Big Impact.</h2>
+                <div class="callout">
+                    <p class="callout-text">
+                        <strong>Mini Echoes</strong> are small, spontaneous meetups — a morning jog, a study break, or coffee nearby.
+                        Get a gentle evening ping for tomorrow's plan, or join something starting soon. Connection doesn't need a weekend — it needs a moment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety & Trust -->
+        <section class="safety animate-on-scroll">
+            <div class="container">
+                <h2 class="section-title">Safety. Authenticity. Trust.</h2>
+                <ul class="safety-list">
+                    <li>Verified profiles through university or approved ID.</li>
+                    <li>Event locations unlock only when enough trusted users join.</li>
+                    <li>No likes. No followers. Just presence.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Signup Section -->
+        <section class="signup animate-on-scroll" id="signup">
+            <div class="container">
+                <div class="signup-wrapper">
+                    <h2 class="section-title">Become a Founding Member</h2>
+                    <p class="signup-subtitle">
+                        Sign up to get early beta access and help shape Echoes before launch. Founding members receive early invites, behind-the-scenes updates, and community perks.
+                    </p>
+
+                    <form id="beta-signup-form" class="signup-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    class="form-input"
+                                    placeholder="Your name"
+                                    autocomplete="name"
+                                    aria-label="Your name"
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                    aria-label="Email address"
+                                >
+                            </div>
+                        </div>
+                        <button type="submit" class="cta-button" id="submit-btn">
+                            <span class="btn-text">Sign Up &amp; Get Early Access</span>
+                            <span class="btn-loader" style="display: none;">Submitting...</span>
+                        </button>
+                        <p class="form-note">
+                            By submitting, you agree to receive early access information and occasional product updates. You can unsubscribe anytime.
+                        </p>
+                    </form>
+
+                    <div id="message" class="message" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <strong>Echoes</strong>
+                    <p class="footer-tagline">Make your presence your profile.</p>
+                </div>
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="#" rel="nofollow">Terms</a>
+                    <a href="#" rel="nofollow">Privacy</a>
+                    <a href="mailto:hello@echoes.app">Contact</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <small>&copy; 2025 Echoes. Building something better.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="env.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
