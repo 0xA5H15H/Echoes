@@ -163,8 +163,11 @@ async function handleSubmit(e) {
                 nameInput.value = '';
                 emailInput.value = '';
             } else {
-                console.error('Supabase error:', error);
-                throw error;
+                console.error('Supabase error details:', error);
+                console.error('Error code:', error.code);
+                console.error('Error message:', error.message);
+                showMessage(`Error: ${error.message || 'Database error. Please contact support.'}`, 'error');
+                return;
             }
         } else {
             showMessage('Welcome to Echoes! Check your email for next steps.', 'success');
