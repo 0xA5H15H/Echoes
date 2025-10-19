@@ -152,8 +152,7 @@ async function handleSubmit(e) {
         // Insert into Supabase
         const { data, error } = await supabase
             .from('beta_signups')
-            .insert([signupData])
-            .select();
+            .insert([signupData]);
 
         if (error) {
             // Handle duplicate email error
