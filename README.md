@@ -1,8 +1,23 @@
-# Echoes - Beta Landing Page
+# Echoes - The First Social App That Ends Social Media
 
-A beautiful, dark-themed landing page for collecting beta signups for Echoes. Built with vanilla JavaScript, HTML, CSS, and Supabase.
+**"Your life, not a scoreboard."**
 
-## Features
+Echoes is a social app that requires you to meet someone in person before you can connect online. No profile stalking. No cold DMs. No friend requests from strangers. Just real connections with people actually around you.
+
+## About This Project
+
+This is the waitlist landing page for Echoes, launching first at the University of Toronto with 100 founding members. Built with vanilla JavaScript, HTML, CSS, and Supabase.
+
+### What Makes Echoes Different
+
+- **In-Person First**: You can't connect online until you've met in person (tap phones to connect)
+- **No Vanity Metrics**: No follower counts, like counts, or trending pages
+- **Ephemeral Content**: Posts disappear after 7 days (unless tagged as Memories)
+- **Feed That Ends**: After 10-15 posts, you're done for the day
+- **Hyperlocal Focus**: Starting with one university, then Toronto
+- **Two Ways to Meet**: ECHOES (planned events) and MINI ECHOES (spontaneous hangouts)
+
+## Landing Page Features
 
 - **Dark, Modern Design** - Sleek black theme with accent colors
 - **Smooth Animations** - Page load animations and scroll-triggered effects
