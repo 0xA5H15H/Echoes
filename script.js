@@ -169,7 +169,7 @@ async function handleSubmit(e) {
                 return;
             }
         } else {
-            showMessage('Welcome to Echoes! Check your email for next steps.', 'success');
+            showMessage('Thank you for signing up! We will send you an email when we are in beta testing.', 'success');
 
             // Clear form on success
             nameInput.value = '';
