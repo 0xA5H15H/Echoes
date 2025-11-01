@@ -15,7 +15,7 @@ This is the waitlist landing page for Enso, launching first at the University of
 - **Ephemeral Content**: Posts disappear after 7 days (unless tagged as Memories)
 - **Feed That Ends**: After 10-15 posts, you're done for the day
 - **Hyperlocal Focus**: Starting with one university, then Toronto
-- **Two Ways to Meet**: ENSO (planned events) and MINI ENSO (spontaneous hangouts)
+- **Two Ways to Meet**: Circles (planned events) and Drops (spontaneous hangouts)
 
 ## Landing Page Features
 
