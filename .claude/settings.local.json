@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add Echoes-Round-Edges.png index.html)",
+      "Bash(git commit -m \"Update favicon to use Echoes-Round-Edges logo\")",
+      "Bash(git push)",
+      "Bash(git add index.html)",
+      "Bash(git commit -m \"Simplify page title to just ''Echoes''\")",
+      "Bash(python:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,21 +1,21 @@
-# Echoes - The First Social App That Ends Social Media
+# Enso - The First Social App That Ends Social Media
 
 **"Your life, not a scoreboard."**
 
-Echoes is a social app that requires you to meet someone in person before you can connect online. No profile stalking. No cold DMs. No friend requests from strangers. Just real connections with people actually around you.
+Enso is a social app that requires you to meet someone in person before you can connect online. No profile stalking. No cold DMs. No friend requests from strangers. Just real connections with people actually around you.
 
 ## About This Project
 
-This is the waitlist landing page for Echoes, launching first at the University of Toronto with 100 founding members. Built with vanilla JavaScript, HTML, CSS, and Supabase.
+This is the waitlist landing page for Enso, launching first at the University of Toronto with 100 founding members. Built with vanilla JavaScript, HTML, CSS, and Supabase.
 
-### What Makes Echoes Different
+### What Makes Enso Different
 
 - **In-Person First**: You can't connect online until you've met in person (tap phones to connect)
 - **No Vanity Metrics**: No follower counts, like counts, or trending pages
 - **Ephemeral Content**: Posts disappear after 7 days (unless tagged as Memories)
 - **Feed That Ends**: After 10-15 posts, you're done for the day
 - **Hyperlocal Focus**: Starting with one university, then Toronto
-- **Two Ways to Meet**: ECHOES (planned events) and MINI ECHOES (spontaneous hangouts)
+- **Two Ways to Meet**: ENSO (planned events) and MINI ENSO (spontaneous hangouts)
 
 ## Landing Page Features
 
@@ -154,7 +154,7 @@ Alternatively, before pushing to GitHub, update `env.js` with your actual creden
 ## Project Structure
 
 ```
-Echoes-Prod/
+Enso-Prod/
 ├── index.html          # Main landing page with dark theme
 ├── styles.css          # All styles, animations, and responsive design
 ├── script.js           # Form handling, Supabase integration, and scroll animations
